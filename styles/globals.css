@@ -1,0 +1,115 @@
+@import url("./reset.css");
+@import url(https://fonts.googleapis.com/css?family=Inter:500,800);
+
+:root {
+  --white: #fff;
+  --element-color: #e9e9e9;
+  --black: #131313;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 90px;
+}
+
+.container {
+  margin: 0 auto;
+  height: 840px;
+  max-width: 400px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+}
+
+/* Список задач */
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  overflow: auto;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  gap: 31px;
+  font-size: 36px;
+  font-weight: 500;
+  margin-right: 31px;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  accent-color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--white);
+}
+
+input[type="checkbox"]:checked::before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 15px;
+  background-image: url("../public/assets/check.svg");
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.wrapper__input {
+  background-color: var(--element-color);
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 32px;
+  padding: 22px;
+}
+
+.wrapper__input::placeholder {
+  color: #9e9e9e;
+}
+
+.wrapper__addTaskButton {
+  background-color: var(--element-color);
+  color: var(--black);
+  padding: 14px 72px;
+  border-radius: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wrapper__addTaskButton:hover {
+  background-color: #b3b3b3;
+}
+
+.wrapper__addTaskButton:active {
+  transform: translateY(2px);
+}
