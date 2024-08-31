@@ -1,2 +1,2 @@
 # contrl-todo
-TODO using HTML, CSS, JS
+TODO using HTML, CSSz for course on youtube
