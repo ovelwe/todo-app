@@ -1,26 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="#" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>todo app</title>
-    <link rel="stylesheet" href="./styles/globals.css" />
-    <script src="./main.js" defer></script>
   </head>
   <body>
-    <h1>todo app</h1>
-    <div class="wrapper">
-      <form action="">
-        <input
-          id="todo-input"
-          type="text"
-          placeholder="write anything and hit enter to add"
-          autocomplete="off"
-        />
-        <button id="add-button">add</button>
-      </form>
-      <ul id="todo-list">
-      </ul>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

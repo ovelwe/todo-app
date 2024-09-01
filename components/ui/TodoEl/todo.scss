@@ -1,0 +1,61 @@
+input[type="checkbox"]:checked ~ .custom-checkbox {
+  background-color: var(--secondary);
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+  text-decoration: line-through;
+  color: var(--striked-text);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  min-height: 34px;
+  min-width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: 200ms ease;
+  cursor: pointer;
+}
+
+li {
+  padding: 0 24px;
+  margin-bottom: 10px;
+  background-color: var(--primary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+li .todo-text {
+  padding: 25px;
+  padding-right: 0;
+  font-size: 24px;
+  font-weight: regular;
+  flex-grow: 1;
+  transition: 200ms ease;
+}
+
+.delete-button {
+  padding: 25px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete-button svg {
+  transition: 200ms ease;
+}
+
+.delete-button:hover svg {
+  fill: #ff6868;
+}
