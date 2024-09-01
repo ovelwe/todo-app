@@ -16,7 +16,7 @@ export const Form: React.FC = () => {
         _hover={{
             outlineColor: 'unset'
         }}/>
-        <Button variant='clear' display='flex' alignItems='center' backgroundColor='var(--primary)' color='var(--secondary)' position='absolute' top={0} right={0}
+        <Button id='add-button' variant='clear' display='flex' alignItems='center' backgroundColor='var(--primary)' color='var(--secondary)' position='absolute' top={0} right={0}
         height="100%" padding="0 35px" borderRadius={30} cursor='pointer' fontWeight={800} textTransform='uppercase' fontSize={36}>ADD</Button>
     </form>
   );
