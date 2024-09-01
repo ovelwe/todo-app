@@ -1,5 +1,5 @@
-import {Wrapper, Title, Form, TaskList} from '../components/shared/index'
-import { Todo } from '../components/ui/TodoEl/todo';
+import {Wrapper, Title, Form, TaskList} from './components/shared/index'
+import { Todo } from './components/ui/index';
 function App() {
 
   return (
