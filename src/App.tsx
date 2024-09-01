@@ -1,4 +1,5 @@
 import {Wrapper, Title, Form, TaskList} from '../components/shared/index'
+import { Todo } from '../components/ui/TodoEl/todo';
 function App() {
 
   return (
@@ -6,7 +7,10 @@ function App() {
       <Title>todo app</Title>
       <Wrapper>
         <Form></Form>
-        <TaskList></TaskList>
+        <TaskList>
+          <Todo id={1}>тест 1</Todo>
+          <Todo id={2}>тест 2</Todo>
+        </TaskList>
       </Wrapper>
     </>
   )

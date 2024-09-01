@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './todo.scss'
 import { Label } from '../Label/label';
 import { Button } from '@merely-ui/react';
@@ -6,13 +6,15 @@ import { InputCustom } from '../InputCustom/inputCustom';
 
 interface Props {
     className?: string;
+    children: ReactNode
+    id: number;
 }
 
-export const Todo: React.FC<Props> = () => {
+export const Todo: React.FC<Props> = ({children, id}) => {
   return (
     <li>
-        <InputCustom type="checkbox" id="todo-1" />
-          <Label className='custom-checkbox' htmlFor="todo-1">
+        <InputCustom type="checkbox" id={`todo-${id}`} />
+          <Label className='custom-checkbox' htmlFor={`todo-${id}`}>
              <svg
               width="22"
               height="17"
@@ -25,7 +27,7 @@ export const Todo: React.FC<Props> = () => {
               />
             </svg>
           </Label>
-          <Label className='todo-text' htmlFor="todo-1"> finish work </Label>
+          <Label className='todo-text' htmlFor={`todo-${id}`}> {children} </Label>
           <Button variant='clear' className='delete-button'>
             <svg
               width="25"

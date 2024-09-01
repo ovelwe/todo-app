@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './taskList.scss'
 import { Todo } from '../../ui/index';
 
 interface Props {
+  children: ReactNode
 }
 
-export const TaskList: React.FC<Props> = () => {
+export const TaskList: React.FC<Props> = ({children}) => {
   return (
     <ul>
-        <Todo />
-        <Todo />
-        <Todo />
+        {children}
     </ul>
   );
 };
