@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes, DetailedHTMLProps } from 'react';
+import React, { AllHTMLAttributes } from 'react';
 
 interface Props extends AllHTMLAttributes<HTMLInputElement> {
     className?: string

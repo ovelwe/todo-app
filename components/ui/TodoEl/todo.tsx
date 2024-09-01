@@ -8,7 +8,7 @@ interface Props {
     className?: string;
 }
 
-export const Todo: React.FC<Props> = ({ className }) => {
+export const Todo: React.FC<Props> = () => {
   return (
     <li>
         <InputCustom type="checkbox" id="todo-1" />

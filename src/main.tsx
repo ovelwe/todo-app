@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Flex, MerelyProvider } from "@merely-ui/react"
+import { MerelyProvider } from "@merely-ui/react"
 import '../styles/globals.scss'
 import App from './App.tsx'
 
