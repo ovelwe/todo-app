@@ -1,14 +1,19 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import './wrapper.scss'
+import { Form, TaskList } from '..';
 
-interface Props {
-    children: ReactNode
-}
+interface Props {}
 
-export const Wrapper: React.FC<Props> = ({ children }) => {
+export const Wrapper: React.FC<Props> = () => {
+   const [updateKey, setUpdateKey] = useState(0);
+
+   const handleTaskAdded = () => {
+    setUpdateKey(prevKey => prevKey + 1);
+  };
   return (
     <div>
-        {children}
+      <Form onTaskAdded={handleTaskAdded} />
+      <TaskList key={updateKey} />
     </div>
   );
 };

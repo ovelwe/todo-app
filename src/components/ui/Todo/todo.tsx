@@ -1,18 +1,35 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import './todo.scss'
+import api from '../../../api/axios';
 import { Label, InputCustom } from '../../ui/index';
 import { Button } from '@merely-ui/react';
+import { ITodo } from '../../../interfaces/ITodo';
 
-interface Props {
-    className?: string;
-    children: ReactNode
-    id: number;
-}
 
-export const Todo: React.FC<Props> = ({children, id}) => {
+export const Todo: React.FC<ITodo> = ({id, isCompleted, onUpdate, task}) => {
+  const [completed, setCompleted] = useState(isCompleted)
+
+  const handleDelete = async () => {
+    try {
+      await api.delete(`/todos/${id}`);
+      onUpdate()
+    } catch (error) {
+      console.error('Error deleting todo:', error)
+    }
+  }
+
+  const handleCheckboxChange = async () => {
+    try {
+      await api.patch(`/todos/${id}`, {isCompleted: !completed});
+      setCompleted(!completed)
+    } catch (error) {
+      console.error('Error updating todo:', error)
+    }
+  }
+
   return (
     <li>
-        <InputCustom type="checkbox" id={`todo-${id}`} />
+        <InputCustom type="checkbox" id={`todo-${id}`} checked={completed} onChange={handleCheckboxChange}/>
           <Label className='custom-checkbox' htmlFor={`todo-${id}`}>
              <svg
               width="22"
@@ -26,8 +43,8 @@ export const Todo: React.FC<Props> = ({children, id}) => {
               />
             </svg>
           </Label>
-          <Label className='todo-text' htmlFor={`todo-${id}`}> {children} </Label>
-          <Button variant='clear' className='delete-button'>
+          <Label className='todo-text' htmlFor={`todo-${id}`}> {task} </Label>
+          <Button variant='clear' className='delete-button' onClick={handleDelete}>
             <svg
               width="25"
               height="28"
